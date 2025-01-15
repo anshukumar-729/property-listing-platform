@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "f8c53273-b40f-419a-954c-4c3038c0b59a",
+		"name": "Tyson Property Llisting Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16992693"
+	},
+	"item": [
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"location\": \"New York\",\n    \"price\": 1500,\n    \"property_type\": \"Apartment\",\n    \"description\": \"Spacious 2-bedroom apartment\",\n    \"amenities\": [\n        \"Wi-Fi\",\n        \"Gym\",\n        \"Pool\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/properties?current_user=Anshu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "current_user",
+							"value": "Anshu"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/properties/search?min_price=1000&max_price=2000&location=New%20York&property_type=Apartment&page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"properties",
+						"search"
+					],
+					"query": [
+						{
+							"key": "min_price",
+							"value": "1000"
+						},
+						{
+							"key": "max_price",
+							"value": "2000"
+						},
+						{
+							"key": "location",
+							"value": "New%20York"
+						},
+						{
+							"key": "property_type",
+							"value": "Apartment"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shortlist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/properties/shortlist/51f984fd-fe57-4464-a00a-a5941e2641cc"
+			},
+			"response": []
+		},
+		{
+			"name": "Shortlisted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/v1/properties/shortlisted"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/properties/eb884ece-8102-4c35-8682-5ff1030b0756/status?status=sold&current_user=Anshu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"properties",
+						"eb884ece-8102-4c35-8682-5ff1030b0756",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						},
+						{
+							"key": "current_user",
+							"value": "Anshu"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
